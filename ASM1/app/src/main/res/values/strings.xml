@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">PRM391x_QuizApp_ngoclptSE00512x</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="ques1">1. Thăng Long là kinh đô của nước ta dưới các triều đại phong kiến nào?</string>
+    <string name="ans1_1">Đinh</string>
+    <string name="ans1_2">Tiền Lê</string>
+    <string name="ans1_3">Lý</string>
+    <string name="ans1_4">Trần</string>
+    <string name="ans1_5">Hồ</string>
+    <string name="ans1_6">Hậu Lê</string>
+    <string name="ans1_7">Tây Sơn</string>
+    <string name="ans1_8">Nguyễn</string>
+    <string name="ans1_9">Mạc</string>
+
+    <string name="ques2">2. Quốc hiệu của nước ta trong giai đoạn từ năm 1400 - 1407?</string>
+
+    <string name="ques3">3. Cuộc chiến chống quân Mông-Nguyên lần 2 diễn ra vào năm nào?</string>
+    <string name="ans3_1">1252</string>
+    <string name="ans3_2">1258</string>
+    <string name="ans3_3">1285</string>
+    <string name="ans3_4">1287</string>
+
+    <string name="ques4">4. Kế sách được triều Trần áp dụng trong cả ba cuộc kháng chiến chống quân Mông-Nguyên?</string>
+
+    <string name="ques5">5. Vị vua cuối cùng của triều Lý?</string>
+
+    <string name="ques6">6. Lê Hoàn đã đánh bại quân đội nào trong chiến thắng Bạch Đằng?</string>
+    <string name="ans6_1">Đường</string>
+    <string name="ans6_2">Tống</string>
+    <string name="ans6_3">Minh</string>
+    <string name="ans6_4">Thanh</string>
+
+    <string name="ques7">7. Chiến thắng quân Nam Hán trên sông Bạch Đằng là chiến thắng Bạch Đằng lần thứ mấy trong lịch sử phong kiến nước ta?</string>
+    <string name="ans7_1">Lần 1</string>
+    <string name="ans7_2">Lần 2</string>
+    <string name="ans7_3">Lần 3</string>
+    <string name="ans7_4">Lần 4</string>
+
+    <string name="ques8_1">8. Hai câu thơ sau nằm trong tác phẩm nào?</string>
+    <string name="ques8_2">Như hà nghịch lỗ lai xâm phạm</string>
+    <string name="ques8_3">Nhữ đẳng hành khan thủ bại hư</string>
+
+    <string name="ques9">9. Tác giả của Hịch tướng sỹ?</string>
+    <string name="ans9_1">Trần Quốc Toản</string>
+    <string name="ans9_2">Trần Quốc Tảng</string>
+    <string name="ans9_3">Trần Quốc Chẩn</string>
+    <string name="ans9_4">Trần Quốc Tuấn</string>
+
+    <string name="ques10">10. Tác phẩm nổi tiếng của Nguyễn Trãi ra đời vào năm 1428?</string>
+</resources>
