@@ -14,8 +14,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hanoi"
-            android:textSize="@dimen/hanoi"
-            android:layout_gravity="center"></TextView>
+            android:textSize="@dimen/header"
+            android:textStyle="bold"
+            android:textColor="@color/purple_500"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space"
+            android:layout_marginBottom="@dimen/space"></TextView>
 
         <Button
             android:layout_width="wrap_content"
@@ -23,6 +27,7 @@
             android:text="@string/hotel"
             android:textSize="@dimen/location"
             android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/space"
             android:id="@+id/hotel"></Button>
 
         <Button
@@ -31,6 +36,7 @@
             android:text="@string/atm"
             android:textSize="@dimen/location"
             android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/space"
             android:id="@+id/atm"></Button>
 
         <Button
@@ -39,6 +45,7 @@
             android:text="@string/hospital"
             android:textSize="@dimen/location"
             android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/space"
             android:id="@+id/hospital"></Button>
 
         <Button
@@ -48,6 +55,11 @@
             android:textSize="@dimen/location"
             android:layout_gravity="center"
             android:id="@+id/bus"></Button>
+        <fragment
+            android:id="@+id/busFragment"
+            android:name="com.example.prm391x_tourguide_ngoclptse00512x.BusFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
