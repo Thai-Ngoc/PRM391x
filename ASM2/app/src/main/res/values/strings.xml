@@ -82,6 +82,7 @@
     <string name="route7">Cầu Giấy - Nội Bài</string>
     <string name="busNo8">Tuyến 08</string>
     <string name="route8">Long Biên - Đông Mỹ</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dummy_button">Dummy Button</string>
