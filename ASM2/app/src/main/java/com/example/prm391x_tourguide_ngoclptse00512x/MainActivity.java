@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnHotel = findViewById(R.id.btn_hotel);
     Button btnAtm = findViewById(R.id.btn_atm);
     Button btnHospital = findViewById(R.id.btn_hospital);
-    Button bus = findViewById(R.id.btn_bus);
+    Button btnBus = findViewById(R.id.btn_bus);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
