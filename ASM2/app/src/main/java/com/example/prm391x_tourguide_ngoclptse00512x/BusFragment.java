@@ -12,11 +12,9 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.prm391x_tourguide_ngoclptse00512x.R.drawable.ic_launcher_background;
-
-public class BusFragment<Contact> extends Fragment {
-    private ListView busLvContent;
-    private List<Contact> contactBusList = new ArrayList<>();
+public class BusFragment extends Fragment {
+    private ListView lvContent;
+    private List<Contact> contactList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,17 +22,19 @@ public class BusFragment<Contact> extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.listview, container, false);
 
-        contactBusList.add((Contact) new ContactBus("Tuyến 01", "BX Gia Lâm - BX Yên Nghĩa"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 02", "Bác Cổ - BX Yên Nghĩa"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 03A", "BX Giáp Bát - BX Gia Lâm"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 03B", "BX Giáp Bát - Vincom- Phúc Lợi"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 04", "Long Biên - BX Nước Ngầm"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 05", "Linh Đàm - Phú Diễn"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 06", "BX Giáp Bát - Phú Minh(Phú Xuyên)"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 07", "Cầu Giấy - Nội Bài"));
-        contactBusList.add((Contact) new ContactBus("Tuyến 08", "Long Biên - Đông Mỹ"));
+        contactList.add(new Contact("Tuyến 01", "BX Gia Lâm - BX Yên Nghĩa"));
+        contactList.add(new Contact("Tuyến 02", "Bác Cổ - BX Yên Nghĩa"));
+        contactList.add(new Contact("Tuyến 03A", "BX Giáp Bát - BX Gia Lâm"));
+        contactList.add(new Contact("Tuyến 03B", "BX Giáp Bát - Vincom- Phúc Lợi"));
+        contactList.add(new Contact("Tuyến 04", "Long biên - BX Nước Ngầm"));
+        contactList.add(new Contact("Tuyến 05", "Linh Đàm - Phú Diễn"));
+        contactList.add(new Contact("Tuyến 06", "BX Giáp Bát - Phú Minh(Phú Xuyên)"));
+        contactList.add(new Contact("Tuyến 07", "Cầu Giấy - Nội Bài"));
+        contactList.add(new Contact("Tuyến 08", "Long Biên - Đông Mỹ"));
 
-
+        BusAdapter busAdapter = new BusAdapter(contactList, getActivity());
+        lvContent = view.findViewById(R.id.list_item);
+        lvContent.setAdapter(busAdapter);
         return view;
     }
 }

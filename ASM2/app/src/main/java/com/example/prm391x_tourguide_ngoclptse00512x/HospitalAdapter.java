@@ -9,17 +9,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class BusAdapter extends BaseAdapter {
-    private List<Contact> listBusContact;
+public class HospitalAdapter extends BaseAdapter {
+    private List<Contact> listHosContact;
     private Activity activity;
 
-    public BusAdapter(List<Contact> listBusContact, Activity activity) {
-        this.listBusContact = listBusContact;
+    public HospitalAdapter(List<Contact> listHosContact, Activity activity) {
+        this.listHosContact = listHosContact;
         this.activity = activity;
     }
 
     public int getCount() {
-        return listBusContact.size();
+        return listHosContact.size();
     }
 
 
@@ -32,25 +32,25 @@ public class BusAdapter extends BaseAdapter {
     }
 
     static class ViewIcon {
-        TextView tvBusName;
-        TextView tvBusAddress;
+        TextView tvHosName;
+        TextView tvHosAddress;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
-            view = inflater.inflate(R.layout.fragment_bus, viewGroup, false);
+            view = inflater.inflate(R.layout.fragment_hospital, viewGroup, false);
             ViewIcon icon = new ViewIcon();
-            icon.tvBusName = view.findViewById(R.id.tv_busName);
-            icon.tvBusAddress = view.findViewById(R.id.tv_busAddress);
+            icon.tvHosName = view.findViewById(R.id.tv_hosName);
+            icon.tvHosAddress = view.findViewById(R.id.tv_hosAddress);
             view.setTag(icon);
         }
 
         ViewIcon icon = (ViewIcon) view.getTag();
-        Contact contact = listBusContact.get(i);
-        icon.tvBusName.setText(contact.getName());
-        icon.tvBusAddress.setText((contact.getAddress()));
+        Contact contact = listHosContact.get(i);
+        icon.tvHosName.setText(contact.getName());
+        icon.tvHosAddress.setText((contact.getAddress()));
 
         return view;
     }

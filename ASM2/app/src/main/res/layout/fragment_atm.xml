@@ -2,21 +2,25 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
     <TextView
-        android:id="@+id/tv_busNo"
+        android:id="@+id/tv_atmName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="35sp"
-        android:text="hello"/>
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:text="hello"
+        android:textColor="@color/white"/>
 
     <TextView
-        android:id="@+id/tv_busRoute"
+        android:id="@+id/tv_atmAddress"
         android:layout_marginTop="35sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="ab"/>
+        android:textSize="23sp"
+        android:text="ab"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

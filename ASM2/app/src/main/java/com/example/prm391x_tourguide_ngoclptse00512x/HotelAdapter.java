@@ -9,48 +9,50 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class BusAdapter extends BaseAdapter {
-    private List<Contact> listBusContact;
+public class HotelAdapter extends BaseAdapter {
+    private List<Contact> listHotelContact;
     private Activity activity;
 
-    public BusAdapter(List<Contact> listBusContact, Activity activity) {
-        this.listBusContact = listBusContact;
+    public HotelAdapter(List<Contact> listHotelContact, Activity activity) {
+        this.listHotelContact = listHotelContact;
         this.activity = activity;
     }
 
+    @Override
     public int getCount() {
-        return listBusContact.size();
+        return listHotelContact.size();
     }
 
-
+    @Override
     public Object getItem(int i) {
         return null;
     }
 
+    @Override
     public long getItemId(int i) {
         return 0;
     }
 
     static class ViewIcon {
-        TextView tvBusName;
-        TextView tvBusAddress;
+        TextView tvHotelName;
+        TextView tvHotelAddress;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
-            view = inflater.inflate(R.layout.fragment_bus, viewGroup, false);
+            view = inflater.inflate(R.layout.fragment_hotel, viewGroup, false);
             ViewIcon icon = new ViewIcon();
-            icon.tvBusName = view.findViewById(R.id.tv_busName);
-            icon.tvBusAddress = view.findViewById(R.id.tv_busAddress);
+            icon.tvHotelName = view.findViewById(R.id.tv_hotelName);
+            icon.tvHotelAddress = view.findViewById(R.id.tv_hotelAddress);
             view.setTag(icon);
         }
 
         ViewIcon icon = (ViewIcon) view.getTag();
-        Contact contact = listBusContact.get(i);
-        icon.tvBusName.setText(contact.getName());
-        icon.tvBusAddress.setText((contact.getAddress()));
+        Contact contact = listHotelContact.get(i);
+        icon.tvHotelName.setText(contact.getName());
+        icon.tvHotelAddress.setText((contact.getAddress()));
 
         return view;
     }

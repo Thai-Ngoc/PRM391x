@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/tv_busName"
+        android:id="@+id/tv_hotelName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:text="hello"
         android:textColor="@color/white"/>
 
     <TextView
-        android:id="@+id/tv_busAddress"
+        android:id="@+id/tv_hotelAddress"
         android:layout_marginTop="35sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="26sp"
+        android:textSize="23sp"
         android:text="ab"
         android:textColor="@color/white"/>
 

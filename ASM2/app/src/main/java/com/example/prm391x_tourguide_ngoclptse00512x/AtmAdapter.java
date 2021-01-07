@@ -1,25 +1,27 @@
 package com.example.prm391x_tourguide_ngoclptse00512x;
 
 import android.app.Activity;
+import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class BusAdapter extends BaseAdapter {
-    private List<Contact> listBusContact;
+public class AtmAdapter extends BaseAdapter {
+    private List<Contact> listAtmContact;
     private Activity activity;
 
-    public BusAdapter(List<Contact> listBusContact, Activity activity) {
-        this.listBusContact = listBusContact;
+    public AtmAdapter(List<Contact> listAtmContact, Activity activity) {
+        this.listAtmContact = listAtmContact;
         this.activity = activity;
     }
 
     public int getCount() {
-        return listBusContact.size();
+        return listAtmContact.size();
     }
 
 
@@ -32,25 +34,25 @@ public class BusAdapter extends BaseAdapter {
     }
 
     static class ViewIcon {
-        TextView tvBusName;
-        TextView tvBusAddress;
+        TextView tvAtmName;
+        TextView tvAtmAddress;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
-            view = inflater.inflate(R.layout.fragment_bus, viewGroup, false);
+            view = inflater.inflate(R.layout.fragment_atm, viewGroup, false);
             ViewIcon icon = new ViewIcon();
-            icon.tvBusName = view.findViewById(R.id.tv_busName);
-            icon.tvBusAddress = view.findViewById(R.id.tv_busAddress);
+            icon.tvAtmName = view.findViewById(R.id.tv_atmName);
+            icon.tvAtmAddress = view.findViewById(R.id.tv_atmAddress);
             view.setTag(icon);
         }
 
         ViewIcon icon = (ViewIcon) view.getTag();
-        Contact contact = listBusContact.get(i);
-        icon.tvBusName.setText(contact.getName());
-        icon.tvBusAddress.setText((contact.getAddress()));
+        Contact contact = listAtmContact.get(i);
+        icon.tvAtmName.setText(contact.getName());
+        icon.tvAtmAddress.setText((contact.getAddress()));
 
         return view;
     }
