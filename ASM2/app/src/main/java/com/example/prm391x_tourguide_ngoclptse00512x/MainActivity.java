@@ -17,21 +17,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnHotel = findViewById(R.id.btn_hotel);
-        btnAtm = findViewById(R.id.btn_atm);
-        btnHospital = findViewById(R.id.btn_hospital);
-        btnBus = findViewById(R.id.btn_bus);
+        //Event button
+        btnHotel = findViewById(R.id.btn_hotel); //Hotel
+        btnAtm = findViewById(R.id.btn_atm); //Atm
+        btnHospital = findViewById(R.id.btn_hospital); //Hospital
+        btnBus = findViewById(R.id.btn_bus); //Bus route
 
         btnHotel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //interact with hotel's fragment
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                intent.putExtra("frg", 1);
                 startActivity(intent);
             }
         });
 
+        btnAtm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //interact with atm's fragment
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                intent.putExtra("frg", 2);
+                startActivity(intent);
+            }
+        });
+
+        btnHospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //interact with hospital's fragment
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                intent.putExtra("frg", 3);
+                startActivity(intent);
+            }
+        });
+
+        btnBus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //interact with bus's fragment
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                intent.putExtra("frg", 4);
+                startActivity(intent);
+            }
+        });
     }
-
-
-
 }

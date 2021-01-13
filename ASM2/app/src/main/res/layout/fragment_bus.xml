@@ -8,18 +8,20 @@
         android:id="@+id/tv_busName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
+        android:textSize="@dimen/name"
         android:textStyle="bold"
-        android:text="hello"
+        android:text="@string/demo"
+        android:layout_marginLeft="@dimen/left_space"
         android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/tv_busAddress"
-        android:layout_marginTop="35sp"
+        android:layout_marginTop="@dimen/list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="26sp"
-        android:text="ab"
+        android:textSize="@dimen/address"
+        android:text="@string/demo"
+        android:layout_marginLeft="@dimen/left_space"
         android:textColor="@color/white"/>
 
 </RelativeLayout>
