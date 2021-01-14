@@ -12,20 +12,17 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
-    CheckBox mAns1_1, mAns1_2, mAns1_3, mAns1_4, mAns1_5, mAns1_6, mAns1_7, mAns1_8, mAns1_9;
+    private CheckBox mAns1_1, mAns1_2, mAns1_3, mAns1_4, mAns1_5, mAns1_6, mAns1_7, mAns1_8, mAns1_9;
 
-    EditText mAns2, mAns4, mAns5, mAns8, mAns10;
+    private EditText mAns2, mAns4, mAns5, mAns8, mAns10;
 
-    RadioButton mAns3, mAns6, mAns7, mAns9;
+    private RadioButton mAns3, mAns6, mAns7, mAns9;
 
-    Button mCalScore;
+    private Button mCalScore;
 
-    int mScore = 0;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+    private int mScore = 0;
 
+    void initView() {
         //event checkbox
         mAns1_1 = findViewById(R.id.ans1_1);
         mAns1_2 = findViewById(R.id.ans1_2);
@@ -37,25 +34,43 @@ public class QuizActivity extends AppCompatActivity {
         mAns1_8 = findViewById(R.id.ans1_8);
         mAns1_9 = findViewById(R.id.ans1_9);
 
-        mAns2 = findViewById(R.id.ans2); //event edit text
+        //event edit text
+        mAns2 = findViewById(R.id.ans2);
 
-        mAns3 = findViewById(R.id.ans3); //event radio button
+        //event radio button
+        mAns3 = findViewById(R.id.ans3);
 
-        mAns4 = findViewById(R.id.ans4); //event edit text
+        //event edit text
+        mAns4 = findViewById(R.id.ans4);
 
-        mAns5 = findViewById(R.id.ans5); //event edit text
+        //event edit text
+        mAns5 = findViewById(R.id.ans5);
 
-        mAns6 = findViewById(R.id.ans6); //event radio button
+        //event radio button
+        mAns6 = findViewById(R.id.ans6);
 
-        mAns7 = findViewById(R.id.ans7); //event radio button
+        //event radio button
+        mAns7 = findViewById(R.id.ans7);
 
-        mAns8 = findViewById(R.id.ans8); //event edit text
+        //event edit text
+        mAns8 = findViewById(R.id.ans8);
 
-        mAns9 = findViewById(R.id.ans9); //event radio button
+        //event radio button
+        mAns9 = findViewById(R.id.ans9);
 
-        mAns10 = findViewById(R.id.ans10); //event edit text
+        //event edit text
+        mAns10 = findViewById(R.id.ans10);
 
-        mCalScore = findViewById(R.id.calScore); //event button
+        //event button
+        mCalScore = findViewById(R.id.calScore);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_quiz);
+
+        initView();
 
         mCalScore.setOnClickListener(new View.OnClickListener() {
             @Override
