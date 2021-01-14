@@ -12,72 +12,74 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
-    CheckBox ans1_1, ans1_2, ans1_3, ans1_4, ans1_5, ans1_6, ans1_7, ans1_8, ans1_9;
+    CheckBox mAns1_1, mAns1_2, mAns1_3, mAns1_4, mAns1_5, mAns1_6, mAns1_7, mAns1_8, mAns1_9;
 
-    EditText ans2, ans4, ans5, ans8, ans10;
+    EditText mAns2, mAns4, mAns5, mAns8, mAns10;
 
-    RadioButton ans3, ans6, ans7, ans9;
+    RadioButton mAns3, mAns6, mAns7, mAns9;
 
-    Button calScore;
+    Button mCalScore;
 
-    int score = 0;
+    int mScore = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        ans1_1 = (CheckBox)findViewById(R.id.ans1_1);
-        ans1_2 = (CheckBox)findViewById(R.id.ans1_2);
-        ans1_3 = (CheckBox)findViewById(R.id.ans1_3);
-        ans1_4 = (CheckBox)findViewById(R.id.ans1_4);
-        ans1_5 = (CheckBox)findViewById(R.id.ans1_5);
-        ans1_6 = (CheckBox)findViewById(R.id.ans1_6);
-        ans1_7 = (CheckBox)findViewById(R.id.ans1_7);
-        ans1_8 = (CheckBox)findViewById(R.id.ans1_8);
-        ans1_9 = (CheckBox)findViewById(R.id.ans1_9);
-        calScore = (Button)findViewById(R.id.calScore);
+        //event checkbox
+        mAns1_1 = findViewById(R.id.ans1_1);
+        mAns1_2 = findViewById(R.id.ans1_2);
+        mAns1_3 = findViewById(R.id.ans1_3);
+        mAns1_4 = findViewById(R.id.ans1_4);
+        mAns1_5 = findViewById(R.id.ans1_5);
+        mAns1_6 = findViewById(R.id.ans1_6);
+        mAns1_7 = findViewById(R.id.ans1_7);
+        mAns1_8 = findViewById(R.id.ans1_8);
+        mAns1_9 = findViewById(R.id.ans1_9);
 
-        ans2 = (EditText)findViewById(R.id.ans2);
+        mAns2 = findViewById(R.id.ans2); //event edit text
 
-        ans3 = (RadioButton)findViewById(R.id.ans3);
+        mAns3 = findViewById(R.id.ans3); //event radio button
 
-        ans4 = (EditText)findViewById(R.id.ans4);
+        mAns4 = findViewById(R.id.ans4); //event edit text
 
-        ans5 = (EditText)findViewById(R.id.ans5);
+        mAns5 = findViewById(R.id.ans5); //event edit text
 
-        ans6 = (RadioButton)findViewById(R.id.ans6);
+        mAns6 = findViewById(R.id.ans6); //event radio button
 
-        ans7 = (RadioButton)findViewById(R.id.ans7);
+        mAns7 = findViewById(R.id.ans7); //event radio button
 
-        ans8 = (EditText)findViewById(R.id.ans8);
+        mAns8 = findViewById(R.id.ans8); //event edit text
 
-        ans9 = findViewById(R.id.ans9);
+        mAns9 = findViewById(R.id.ans9); //event radio button
 
-        ans10 = (EditText)findViewById(R.id.ans10);
+        mAns10 = findViewById(R.id.ans10); //event edit text
 
-        calScore.setOnClickListener(new View.OnClickListener() {
+        mCalScore = findViewById(R.id.calScore); //event button
+
+        mCalScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int result = result();
                 String end = "Điểm: " + result + "/10";
-                Toast.makeText(getApplicationContext(), end, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), end, Toast.LENGTH_LONG).show(); //show score
             }
         });
     }
 
-    int result(){
-        score = 0;
-        score = (ans1_3.isChecked() && ans1_4.isChecked() && ans1_6.isChecked() && ans1_9.isChecked() && !ans1_1.isChecked() && !ans1_2.isChecked() && !ans1_5.isChecked() && !ans1_7.isChecked() && !ans1_8.isChecked()) ? score + 1 : score;
-        score = (ans2.equals("Đại Ngu")) ? score + 1 : score;
-        score = (ans3.isChecked()) ? score + 1 : score;
-        score = (ans4.equals("Vườn không nhà trống")) ? score + 1 : score;
-        score = (ans5.equals("Lý Chiêu Hoàng")) ? score + 1 : score;
-        score = (ans6.isChecked()) ? score + 1 : score;
-        score = (ans7.isChecked()) ? score + 1 : score;
-        score = (ans8.equals("Nam quốc sơn hà")) ? score + 1 : score;
-        score = (ans9.isChecked()) ? score + 1 : score;
-        score = (ans10.equals("Bình Ngô đại cáo")) ? score + 1 : score;
+    int result(){ //calculate score
+        mScore = 0;
+        mScore = (mAns1_3.isChecked() && mAns1_4.isChecked() && mAns1_6.isChecked() && mAns1_9.isChecked() && !mAns1_1.isChecked() && !mAns1_2.isChecked() && !mAns1_5.isChecked() && !mAns1_7.isChecked() && !mAns1_8.isChecked()) ? mScore + 1 : mScore;
+        mScore = (mAns2.equals("Đại Ngu")) ? mScore + 1 : mScore;
+        mScore = (mAns3.isChecked()) ? mScore + 1 : mScore;
+        mScore = (mAns4.equals("Vườn không nhà trống")) ? mScore + 1 : mScore;
+        mScore = (mAns5.equals("Lý Chiêu Hoàng")) ? mScore + 1 : mScore;
+        mScore = (mAns6.isChecked()) ? mScore + 1 : mScore;
+        mScore = (mAns7.isChecked()) ? mScore + 1 : mScore;
+        mScore = (mAns8.equals("Nam quốc sơn hà")) ? mScore + 1 : mScore;
+        mScore = (mAns9.isChecked()) ? mScore + 1 : mScore;
+        mScore = (mAns10.equals("Bình Ngô đại cáo")) ? mScore + 1 : mScore;
 
-        return score;
+        return mScore;
     }
 }
