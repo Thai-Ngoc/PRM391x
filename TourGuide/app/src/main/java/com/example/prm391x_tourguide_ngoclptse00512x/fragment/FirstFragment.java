@@ -19,13 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstFragment extends Fragment {
-    private Button btnHotel;
-    private Button btnATM;
-    private Button btnHospital;
-    private Button btnBus;
+    private Button mBtnHotel;
+    private Button mBtnATM;
+    private Button mBtnHospital;
+    private Button mBtnBus;
 
-    private SecondFragment secondFragment;
-    private Bundle bundle;
+    private SecondFragment mSecondFragment;
+    private Bundle mBundle;
 
     public FirstFragment() {
         super(R.layout.fragment_first);
@@ -35,10 +35,11 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
-        secondFragment = new SecondFragment();
-        bundle = new Bundle();
+        mSecondFragment = new SecondFragment();
+        mBundle = new Bundle();
 
-        btnHotel.setOnClickListener(new View.OnClickListener() {
+        //Click button Khách sạn to view list of hotels
+        mBtnHotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 List<Contact> contacts = new ArrayList<>();
@@ -53,12 +54,14 @@ public class FirstFragment extends Fragment {
                 contacts.add(new Contact(getString(R.string.hotel8), getString(R.string.hotelAdd8)));
                 contacts.add(new Contact(getString(R.string.hotel9), getString(R.string.hotelAdd9)));
 
-                bundle.putSerializable("list", (Serializable) contacts);
-                secondFragment.setArguments(bundle);
+                mBundle.putSerializable("list", (Serializable) contacts);
+                mSecondFragment.setArguments(mBundle);
                 navigate();
             }
         });
-        btnATM.setOnClickListener(new View.OnClickListener() {
+
+        //click button ATM to view list of ATMs
+        mBtnATM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 List<Contact> contacts = new ArrayList<>();
@@ -72,13 +75,14 @@ public class FirstFragment extends Fragment {
                 contacts.add(new Contact(getString(R.string.atm8), getString(R.string.atmAdd8)));
                 contacts.add(new Contact(getString(R.string.atm9), getString(R.string.atmAdd9)));
 
-                bundle.putSerializable("list", (Serializable) contacts);
-                secondFragment.setArguments(bundle);
+                mBundle.putSerializable("list", (Serializable) contacts);
+                mSecondFragment.setArguments(mBundle);
                 navigate();
             }
         });
 
-        btnHospital.setOnClickListener(new View.OnClickListener(){
+        //click button Bệnh viện to view list of hospitals
+        mBtnHospital.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -94,13 +98,14 @@ public class FirstFragment extends Fragment {
                 contacts.add(new Contact(getString(R.string.hos9), getString(R.string.hosAdd9)));
                 contacts.add(new Contact(getString(R.string.hos10), getString(R.string.hosAdd10)));
 
-                bundle.putSerializable("list", (Serializable) contacts);
-                secondFragment.setArguments(bundle);
+                mBundle.putSerializable("list", (Serializable) contacts);
+                mSecondFragment.setArguments(mBundle);
                 navigate();
             }
         });
 
-        btnBus.setOnClickListener(new View.OnClickListener(){
+        //click button Xe bus to view list of buses
+        mBtnBus.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -115,26 +120,30 @@ public class FirstFragment extends Fragment {
                 contacts.add(new Contact(getString(R.string.bus7), getString(R.string.busRoute7)));
                 contacts.add(new Contact(getString(R.string.bus8), getString(R.string.busRoute8)));
 
-                bundle.putSerializable("list", (Serializable) contacts);
-                secondFragment.setArguments(bundle);
+                //packed and send data to second fragment
+                mBundle.putSerializable("list", (Serializable) contacts);
+                mSecondFragment.setArguments(mBundle);
+
                 navigate();
             }
         });
     }
 
+    //navigate to second fragment
     private void navigate() {
         getActivity()
                 .getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack(null)
-                .replace(R.id.rootView, secondFragment)
+                .replace(R.id.rootView, mSecondFragment)
                 .commit();
     }
 
+    //mapping buttons
     private void initView(View view) {
-        btnHotel = view.findViewById(R.id.btn_hotel);
-        btnATM = view.findViewById(R.id.btn_atm);
-        btnHospital = view.findViewById(R.id.btn_hospital);
-        btnBus = view.findViewById(R.id.btn_bus);
+        mBtnHotel = view.findViewById(R.id.btn_hotel);
+        mBtnATM = view.findViewById(R.id.btn_atm);
+        mBtnHospital = view.findViewById(R.id.btn_hospital);
+        mBtnBus = view.findViewById(R.id.btn_bus);
     }
 }

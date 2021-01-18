@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Display first fragment when start the app
         Fragment fragment = new FirstFragment();
         fragment(fragment);
     }

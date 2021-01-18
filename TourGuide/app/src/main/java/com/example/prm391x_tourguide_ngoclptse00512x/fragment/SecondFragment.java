@@ -18,8 +18,8 @@ import com.example.prm391x_tourguide_ngoclptse00512x.model.Contact;
 import java.util.List;
 
 public class SecondFragment extends Fragment {
-    private ListAdapter listAdapter;
-    private ListView listView;
+    private ListAdapter mListAdapter;
+    private ListView mListView;
 
     public SecondFragment() {
         super(R.layout.fragment_second);
@@ -29,14 +29,16 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
+
+        //received data from first fragment
         List<Contact> list = (List<Contact>) getArguments().get("list");
 
-        listAdapter = new ListAdapter(getActivity(), list);
-        listView.setAdapter(listAdapter);
+        mListAdapter = new ListAdapter(getActivity(), list);
+        mListView.setAdapter(mListAdapter);
 
     }
 
     private void initView(View view) {
-        listView = view.findViewById(R.id.listView);
+        mListView = view.findViewById(R.id.listView);
     }
 }
