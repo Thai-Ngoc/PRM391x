@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hanoi">35sp</dimen>
+    <dimen name="button">20sp</dimen>
+    <dimen name="button_space">10sp</dimen>
+    <dimen name="name">25sp</dimen>
+    <dimen name="address">20sp</dimen>
+    <dimen name="left_space">5sp</dimen>
+    <dimen name="list_item">10sp</dimen>
+</resources>

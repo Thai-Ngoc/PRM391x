@@ -25,7 +25,7 @@ public class AtmFragment extends Fragment {
 
         contactList.add(new Contact("ATM Hoàn Kiếm", "17 phố Lý Thường Kiệt, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội"));
         contactList.add(new Contact("ATM Đinh Tiên Hoàng", "7 Đinh Tiên Hoàng, Quận Hoàn Kiếm, Hà Nội"));
-        contactList.add(new Contact("ATM Hội sở", "57 Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nộim"));
+        contactList.add(new Contact("ATM Hội sở", "57 Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nội"));
         contactList.add(new Contact("ATM Nam Hà Nội", "236 Lê Thanh Nghị, Quận Hai Bà Trưng, Hà Nội"));
         contactList.add(new Contact("ATM Hai Bà Trưng", "300-302 Trần Khát Chân, Quận Hai Bà Trưng, Hà Nội"));
         contactList.add(new Contact("ATM Lê Ngọc Hân", "44 Lê Ngọc Hân, Quận Hai Bà Trưng, Hà Nội"));

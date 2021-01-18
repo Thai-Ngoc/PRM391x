@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">PRM391x_TourGuide_ngoclptSE00512x</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hanoi">Hà Nội, Việt Nam</string>
+    <string name="hotel">Khách sạn</string>
+    <string name="atm">ATM</string>
+    <string name="hospital">Bệnh viện</string>
+    <string name="bus">Xe bus</string>
+    <string name="demo">demo</string>
+
+    <string name="hotel1">The Queen Hotel &amp; Spa</string>
+    <string name="hotelAdd1">67 Thuốc Bắc, Hàng Bồ, Hàng Bồ, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel2">Hanoi Nostalgia Hotel &amp; Spa</string>
+    <string name="hotelAdd2">13-15 Lương Ngọc Quyến, Hàng Buồm, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel3">Church Legend Hotel Hanoi</string>
+    <string name="hotelAdd3">46 Ấu Triệu, Phường Hàng Trống, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel4">Little Hanoi Diamond Hotel</string>
+    <string name="hotelAdd4">11 Bát Đàn, Quận Hoàn Kiếm, Hàng Bồ, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel5">Flamingo Dai Lai Resort</string>
+    <string name="hotelAdd5">Thôn Ngọc Quang, Xã Ngọc Thanh, Vĩnh Phúc, Phúc Yên, Hà Nội, Việt Nam</string>
+    <string name="hotel6">The Queen Hotel &amp; Spa</string>
+    <string name="hotelAdd6">27 Hàng Bè, Hàng Bạc, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel7">Annam Legend Hotel</string>
+    <string name="hotelAdd7">27 Hàng Bè, Hàng Bạc, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel8">Hanoi Zesty Hotel</string>
+    <string name="hotelAdd8">20 Hàng Cân, Hàng Đào, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+    <string name="hotel9">Bluebell Hotel</string>
+    <string name="hotelAdd9">41 Ngõ Huyện, Phường Hàng Trống, Quận Hoàn Kiếm, Hà Nội, Việt Nam</string>
+
+    <string name="atm1">ATM Hoàn Kiếm</string>
+    <string name="atmAdd1">17 phố Lý Thường Kiệt, Phường Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội</string>
+    <string name="atm2">ATM Đinh Tiên Hoàng</string>
+    <string name="atmAdd2">7 Đinh Tiên Hoàng, Quận Hoàn Kiếm, Hà Nội</string>
+    <string name="atm3">ATM Hội sở</string>
+    <string name="atmAdd3">57 Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nội</string>
+    <string name="atm4">ATM Nam Hà Nội</string>
+    <string name="atmAdd4">236 Lê Thanh Nghị, Quận Hai Bà Trưng, Hà Nội</string>
+    <string name="atm5">ATM Hai Bà Trưng</string>
+    <string name="atmAdd5">300-302 Trần Khát Chân, Quận Hai Bà Trưng, Hà Nội</string>
+    <string name="atm6">ATM Lê Ngọc Hân</string>
+    <string name="atmAdd6">44 Lê Ngọc Hân, Quận Hai Bà Trưng, Hà Nội</string>
+    <string name="atm7">ATM Thăng Long</string>
+    <string name="atmAdd7">129-131 Hoàng Quốc Việt, Quận Cầu Giấy, Hà Nội</string>
+    <string name="atm8">ATM Phạm Hùng</string>
+    <string name="atmAdd8">Tòa nhà FPT Phạm Hùng, Quận Cầu Giấy, Hà Nội</string>
+    <string name="atm9">ATM Khâm Thiên</string>
+    <string name="atmAdd9">158 Khâm Thiên, Quận Đống Đa, Hà Nội</string>
+
+    <string name="hos1">Bệnh viện Bạch Mai</string>
+    <string name="hosAdd1">78 – Đường Giải Phóng – Phương Mai – Đống Đa – Hà Nội</string>
+    <string name="hos2">Bệnh viện Hữu Nghị</string>
+    <string name="hosAdd2">Số 1 – Trần Khánh Dư – Quận Hai Bà Trưng – Hà Nội</string>
+    <string name="hos3">Bệnh viện E, Hà Nội</string>
+    <string name="hosAdd3">589 – Trần Cung – Nghĩa Tân – Cầu Giấy – Hà Nội</string>
+    <string name="hos4">Viện Răng Hàm Mặt</string>
+    <string name="hosAdd4">40B – Tràng Thi – Hoàn Kiếm – Hà Nội</string>
+    <string name="hos5">Bệnh viện Tai Mũi Họng Trung Ương</string>
+    <string name="hosAdd5">78 – Đường Giải Phóng – Quận Đống Đa – Hà Nội</string>
+    <string name="hos6">Bệnh viện Mắt Trung Ương</string>
+    <string name="hosAdd6">85 – Phố Bà Triệu – Quận Hai Bà Trưng – Hà Nội</string>
+    <string name="hos7">Viện Y Học Cổ Truyền Trung Ương</string>
+    <string name="hosAdd7">29 – Phố Nguyễn Bỉnh Khiêm – Quận Hai Bà Trưng – Hà Nội</string>
+    <string name="hos8">Bệnh viện Nội Tiết</string>
+    <string name="hosAdd8">80 – Thái Thịnh II – Thịnh Quang – Đống Đa – Hà Nội</string>
+    <string name="hos9">Bệnh viện Việt Đức</string>
+    <string name="hosAdd9">8 – Phố Phủ Doãn – Quận Hoàn Kiếm – Hà Nội</string>
+    <string name="hos10">Bệnh viện Nhi Trung Ương</string>
+    <string name="hosAdd10">18/879 – Đường La Thành – Quận Đống Đa – Hà Nội</string>
+
+    <string name="bus1">Tuyến 01</string>
+    <string name="busRoute1">BX Gia Lâm - BX Yên Nghĩa</string>
+    <string name="bus2">Tuyến 02</string>
+    <string name="busRoute2">Bác Cổ - BX Yên Nghĩa</string>
+    <string name="bus3a">Tuyến 03A</string>
+    <string name="busRoute3a">BX Giáp Bát - BX Gia Lâm</string>
+    <string name="bus3b">Tuyến 03B</string>
+    <string name="busRoute3b">BX Giáp Bát - Vincom- Phúc Lợi</string>
+    <string name="bus4">Tuyến 04</string>
+    <string name="busRoute4">Long biên - BX Nước Ngầm</string>
+    <string name="bus5">Tuyến 05</string>
+    <string name="busRoute5">Linh Đàm - Phú Diễn</string>
+    <string name="bus6">Tuyến 06</string>
+    <string name="busRoute6">BX Giáp Bát - Phú Minh(Phú Xuyên)</string>
+    <string name="bus7">Tuyến 07</string>
+    <string name="busRoute7">Cầu Giấy - Nội Bài</string>
+    <string name="bus8">Tuyến 08</string>
+    <string name="busRoute8">Long Biên - Đông Mỹ</string>
+</resources>

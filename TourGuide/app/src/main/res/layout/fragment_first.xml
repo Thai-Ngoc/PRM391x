@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FirstFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hanoi"
+        android:textSize="@dimen/hanoi"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/button_space"
+        android:layout_marginBottom="@dimen/button_space"></TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hotel"
+        android:textSize="@dimen/button"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/button_space"
+        android:id="@+id/btn_hotel"></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/atm"
+        android:textSize="@dimen/button"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/button_space"
+        android:id="@+id/btn_atm"></Button>
+
+    <Button
+        android:id="@+id/btn_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/button_space"
+        android:text="@string/hospital"
+        android:textSize="@dimen/button"></Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bus"
+        android:textSize="@dimen/button"
+        android:layout_gravity="center"
+        android:id="@+id/btn_bus"></Button>
+
+
+
+</LinearLayout>
