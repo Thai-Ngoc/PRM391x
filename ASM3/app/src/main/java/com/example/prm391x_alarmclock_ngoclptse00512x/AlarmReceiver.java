@@ -8,8 +8,13 @@ import android.util.Log;
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.e("Tôi trong Receiver","Xin chào");
-        Intent myIntent = new Intent(context,Music.class);
+        Log.d("Tôi trong Receiver","Xin chào");
+
+        String getExtras = intent.getExtras().getString("extra");
+        Log.d("Truyền key",getExtras);
+
+        Intent myIntent = new Intent(context, Music.class);
+        myIntent.putExtra("extra",getExtras);
         context.startService(myIntent);
     }
 }

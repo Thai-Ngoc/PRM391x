@@ -40,6 +40,7 @@ public class MainActivity2 extends Activity {
         mAlarmTextView = findViewById(R.id.alarmText);
         mAlarmToggle = findViewById(R.id.alarmToggle);
         mCalendar = Calendar.getInstance();
+
         mAlarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 
         Intent intent = new Intent(MainActivity2.this, AlarmReceiver.class);
@@ -71,6 +72,8 @@ public class MainActivity2 extends Activity {
                         string_minute = "0" + minute;
                     }
 
+                    intent.putExtra("extra","on");
+
                     mPendingIntent = PendingIntent.getBroadcast(MainActivity2.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
                     mAlarmManager.set(AlarmManager.RTC_WAKEUP,mCalendar.getTimeInMillis(),mPendingIntent);
@@ -78,6 +81,9 @@ public class MainActivity2 extends Activity {
                     mAlarmTextView.setText("On alarm at: " + string_hour + ":" + string_minute);
                 } else {
                     mAlarmTextView.setText("Off alarm");
+                    mAlarmManager.cancel(mPendingIntent);
+                    intent.putExtra("extra","off");
+                    sendBroadcast(intent);
                 }
             }
         });
