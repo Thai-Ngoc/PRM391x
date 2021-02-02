@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button addAlarmBtn;
+    private Button mBtnAddAlarm;
     ListView listView;
 
     private AlarmDatabase alarmDatabase = new AlarmDatabase(this);
@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addAlarmBtn = findViewById(R.id.addAlarmButton);
+        //Button creates a new alarm
+        mBtnAddAlarm = findViewById(R.id.addAlarmButton);
+
+        //ListView displays list of alarm
         listView = findViewById(R.id.listAlarm);
 
         // Read all alarms stored in database
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         final Intent i = new Intent(this, TimePickerActivity.class);
-        addAlarmBtn.setOnClickListener(new View.OnClickListener() {
+        mBtnAddAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(i);

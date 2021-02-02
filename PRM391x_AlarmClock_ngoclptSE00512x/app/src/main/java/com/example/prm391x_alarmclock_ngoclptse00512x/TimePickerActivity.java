@@ -10,8 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TimePickerActivity extends AppCompatActivity {
-    Button addBtn, cancelBtn;
-    TimePicker timePicker;
+    private Button mBtnAdd, mBtnCancel;
+    private TimePicker timePicker;
 
     AlarmDatabase alarmDatabase = new AlarmDatabase(this);
     @Override
@@ -19,15 +19,15 @@ public class TimePickerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_picker);
 
-        //Phan TimePicker
+        //TimePicker
         timePicker = findViewById(R.id.timePicker);
 
-        addBtn = findViewById(R.id.addButton);
-        cancelBtn = findViewById(R.id.cancelButton);
+        mBtnAdd = findViewById(R.id.addButton);
+        mBtnCancel = findViewById(R.id.cancelButton);
 
         final Intent i = new Intent(this, MainActivity.class);
 
-        addBtn.setOnClickListener(new View.OnClickListener() {
+        mBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int hour = timePicker.getCurrentHour();
@@ -40,7 +40,7 @@ public class TimePickerActivity extends AppCompatActivity {
             }
         });
 
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
+        mBtnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

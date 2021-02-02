@@ -12,7 +12,9 @@ public class AlarmReceiver extends BroadcastReceiver {
         Log.i("AlarmReceiver", "AlarmReceiver has been called.");
         String extra = intent.getExtras().getString("extra");
         Intent receiverIntent = new Intent(context, AlarmService.class);
+        //send data to AlarmService
         receiverIntent.putExtra("extra", extra);
+        //alarm ring
         context.startService(receiverIntent);
     }
 }

@@ -20,6 +20,7 @@ public class AlarmService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("AlarmService", "Service has been called.");
 
+        //receive data from AlarmReceiver
         String extra = intent.getExtras().getString("extra");
         mediaPlayer = MediaPlayer.create(this, R.raw.ring);
         if (extra.equals("on")) {

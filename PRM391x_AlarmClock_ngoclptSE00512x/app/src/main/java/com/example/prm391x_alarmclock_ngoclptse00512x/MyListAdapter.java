@@ -89,15 +89,18 @@ public class MyListAdapter extends ArrayAdapter<TimeModel> {
                     alarmManager.cancel(pendingIntent);
                     alarmIntent.putExtra("extra", "off");
                     context.sendBroadcast(alarmIntent);
+                    AlarmService.mediaPlayer.stop();
 
                 }
             }
         });
 
         deleteButton.setOnClickListener(new View.OnClickListener() {
+            //delete alarm
             @Override
             public void onClick(View v) {
                 alarmDatabase.deleteTime(timesList.get(position));
+                //remove from list
                 timesList.remove(position);
                 context.recreate();
             }
