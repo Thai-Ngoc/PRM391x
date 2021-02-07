@@ -11,16 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TimePickerActivity extends AppCompatActivity {
     private Button mBtnAdd, mBtnCancel;
-    private TimePicker timePicker;
+    private TimePicker mTimePicker;
 
-    AlarmDatabase alarmDatabase = new AlarmDatabase(this);
+    AlarmDatabase mAlarmDatabase = new AlarmDatabase(this);
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_picker);
 
         //TimePicker
-        timePicker = findViewById(R.id.timePicker);
+        mTimePicker = findViewById(R.id.timePicker);
 
         mBtnAdd = findViewById(R.id.addButton);
         mBtnCancel = findViewById(R.id.cancelButton);
@@ -30,11 +30,11 @@ public class TimePickerActivity extends AppCompatActivity {
         mBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int hour = timePicker.getCurrentHour();
-                int minute = timePicker.getCurrentMinute();
+                int hour = mTimePicker.getCurrentHour();
+                int minute = mTimePicker.getCurrentMinute();
 
                 TimeModel timeModel = new TimeModel(hour, minute);
-                alarmDatabase.addTime(timeModel);
+                mAlarmDatabase.addTime(timeModel);
 
                 startActivity(i);
             }

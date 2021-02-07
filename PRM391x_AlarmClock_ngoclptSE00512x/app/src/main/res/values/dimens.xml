@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_marginTop">140dp</dimen>
-    <dimen name="button_marginStart">65dp</dimen>
+    <dimen name="button_marginLeft">65sp</dimen>
+    <dimen name="button_marginPicker">100sp</dimen>
+    <dimen name="padding">2dp</dimen>
+    <dimen name="button_marginLeftItem">10dp</dimen>
+    <dimen name="button_marginTopItem">5dp</dimen>
 </resources>

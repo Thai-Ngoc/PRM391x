@@ -9,7 +9,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 public class AlarmService extends Service {
-    public static MediaPlayer mediaPlayer;
+    public static MediaPlayer sMediaPlayer;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -22,12 +22,12 @@ public class AlarmService extends Service {
 
         //receive data from AlarmReceiver
         String extra = intent.getExtras().getString("extra");
-        mediaPlayer = MediaPlayer.create(this, R.raw.ring);
+        sMediaPlayer = MediaPlayer.create(this, R.raw.ring);
         if (extra.equals("on")) {
-            mediaPlayer.start();
+            sMediaPlayer.start();
         } else if (extra.equals("off")) {
-            mediaPlayer.stop();
-            mediaPlayer.reset();
+            sMediaPlayer.stop();
+            sMediaPlayer.reset();
         }
 
         return START_NOT_STICKY;

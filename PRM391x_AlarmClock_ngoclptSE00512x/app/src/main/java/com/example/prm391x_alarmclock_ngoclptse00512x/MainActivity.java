@@ -13,26 +13,26 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnAddAlarm;
-    ListView listView;
+    ListView mListView;
 
-    private AlarmDatabase alarmDatabase = new AlarmDatabase(this);
+    private AlarmDatabase mAlarmDatabase = new AlarmDatabase(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Button creates a new alarm
-        mBtnAddAlarm = findViewById(R.id.addAlarmButton);
+        mBtnAddAlarm = findViewById(R.id.btn_addAlarm);
 
         //ListView displays list of alarm
-        listView = findViewById(R.id.listAlarm);
+        mListView = findViewById(R.id.lv_listAlarm);
 
         // Read all alarms stored in database
-        ArrayList<TimeModel> timeList = new ArrayList<>(alarmDatabase.getAllTimes());
+        ArrayList<TimeModel> timeList = new ArrayList<>(mAlarmDatabase.getAllTimes());
 
         // add to ListView
         MyListAdapter adapter = new MyListAdapter(this, timeList);
-        listView.setAdapter(adapter);
+        mListView.setAdapter(adapter);
 
         final Intent i = new Intent(this, TimePickerActivity.class);
         mBtnAddAlarm.setOnClickListener(new View.OnClickListener() {

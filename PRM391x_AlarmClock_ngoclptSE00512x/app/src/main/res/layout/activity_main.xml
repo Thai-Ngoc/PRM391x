@@ -11,13 +11,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Button
-            android:id="@+id/addAlarmButton"
+            android:id="@+id/btn_addAlarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_alarm_button" />
 
         <ListView
-            android:id="@+id/listAlarm"
+            android:id="@+id/lv_listAlarm"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

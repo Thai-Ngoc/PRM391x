@@ -5,53 +5,53 @@ import androidx.annotation.NonNull;
 import java.io.Serializable;
 
 public class TimeModel implements Serializable {
-    private int id;
-    private int hour;
-    private int minute;
+    private int mId;
+    private int mHour;
+    private int mMinute;
 
     public TimeModel() {
 
     }
 
     public TimeModel(int hour, int minute) {
-        this.hour = hour;
-        this.minute = minute;
+        this.mHour = hour;
+        this.mMinute = minute;
     }
 
     public TimeModel(int id, int hour, int minute) {
-        this.id = id;
-        this.hour = hour;
-        this.minute = minute;
+        this.mId = id;
+        this.mHour = hour;
+        this.mMinute = minute;
     }
 
     public int getId() {
-        return id;
+        return mId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.mId = id;
     }
 
     public int getHour() {
-        return hour;
+        return mHour;
     }
 
     public void setHour(int hour) {
-        this.hour = hour;
+        this.mHour = hour;
     }
 
     public int getMinute() {
-        return minute;
+        return mMinute;
     }
 
     public void setMinute(int minute) {
-        this.minute = minute;
+        this.mMinute = minute;
     }
 
     @NonNull
     @Override
     public String toString() {
-        return this.hour + ":" + this.minute;
+        return this.mHour + ":" + this.mMinute;
     }
 }
 

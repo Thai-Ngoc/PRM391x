@@ -20,28 +20,28 @@ import static android.content.Context.ALARM_SERVICE;
 
 public class MyListAdapter extends ArrayAdapter<TimeModel> {
 
-    private final Activity context;
-    private final ArrayList<TimeModel> timesList;
+    private final Activity CONTEXT;
+    private final ArrayList<TimeModel> TIMES_LIST;
 
-    AlarmDatabase alarmDatabase;
-    Calendar calendar;
-    AlarmManager alarmManager;
-    PendingIntent pendingIntent;
-    ArrayList<PendingIntent> pendingList;
+    AlarmDatabase mAlarmDatabase;
+    Calendar mCalendar;
+    AlarmManager mAlarmManager;
+    PendingIntent mPendingIntent;
+    ArrayList<PendingIntent> mPendingList;
 
     public MyListAdapter(Activity context, ArrayList<TimeModel> timesList) {
         super(context, R.layout.mylist, timesList);
         // TODO Auto-generated constructor stub
 
-        this.context = context;
-        this.timesList = timesList;
-        alarmDatabase = new AlarmDatabase(context);
+        this.CONTEXT = context;
+        this.TIMES_LIST = timesList;
+        mAlarmDatabase = new AlarmDatabase(context);
 
 
     }
 
     public View getView(final int position,View view,ViewGroup parent) {
-        LayoutInflater inflater=context.getLayoutInflater();
+        LayoutInflater inflater=CONTEXT.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.mylist, null,true);
 
         TextView titleText = rowView.findViewById(R.id.title);
@@ -50,17 +50,17 @@ public class MyListAdapter extends ArrayAdapter<TimeModel> {
         Button deleteButton = rowView.findViewById(R.id.deleteButton);
 
 
-        titleText.setText(timesList.get(position).toString());
+        titleText.setText(TIMES_LIST.get(position).toString());
         subtitleText.setText("Alarm Clock");
 
-        calendar = Calendar.getInstance();
-        alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
-        pendingList = new ArrayList<>();
-        for (int i = 0; i < timesList.size(); i++) {
-            pendingList.add(null);
+        mCalendar = Calendar.getInstance();
+        mAlarmManager = (AlarmManager) CONTEXT.getSystemService(ALARM_SERVICE);
+        mPendingList = new ArrayList<>();
+        for (int i = 0; i < TIMES_LIST.size(); i++) {
+            mPendingList.add(null);
         }
 
-        final Intent alarmIntent = new Intent(context, AlarmReceiver.class);
+        final Intent alarmIntent = new Intent(CONTEXT, AlarmReceiver.class);
 
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,28 +68,28 @@ public class MyListAdapter extends ArrayAdapter<TimeModel> {
                 boolean checked = ((ToggleButton) v).isChecked();
                 if (checked){
                     // On alarm
-                    Toast.makeText(context, "You choose ON", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CONTEXT, "You choose ON", Toast.LENGTH_SHORT).show();
 
-                    calendar.set(Calendar.HOUR_OF_DAY, timesList.get(position).getHour());
-                    calendar.set(Calendar.MINUTE, timesList.get(position).getMinute());
+                    mCalendar.set(Calendar.HOUR_OF_DAY, TIMES_LIST.get(position).getHour());
+                    mCalendar.set(Calendar.MINUTE, TIMES_LIST.get(position).getMinute());
 
                     alarmIntent.putExtra("extra", "on");
-                    pendingIntent = PendingIntent.getBroadcast(
-                            context, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT
+                    mPendingIntent = PendingIntent.getBroadcast(
+                            CONTEXT, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT
                     );
 
-                    pendingList.set(position, pendingIntent);
+                    mPendingList.set(position, mPendingIntent);
 
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingList.get(position));
+                    mAlarmManager.set(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), mPendingList.get(position));
                 }
                 else{
                     // Off alarm
 
-                    Toast.makeText(context, "You choose OFF", Toast.LENGTH_SHORT).show();
-                    alarmManager.cancel(pendingIntent);
+                    Toast.makeText(CONTEXT, "You choose OFF", Toast.LENGTH_SHORT).show();
+                    mAlarmManager.cancel(mPendingIntent);
                     alarmIntent.putExtra("extra", "off");
-                    context.sendBroadcast(alarmIntent);
-                    AlarmService.mediaPlayer.stop();
+                    CONTEXT.sendBroadcast(alarmIntent);
+                    AlarmService.sMediaPlayer.stop();
 
                 }
             }
@@ -99,10 +99,10 @@ public class MyListAdapter extends ArrayAdapter<TimeModel> {
             //delete alarm
             @Override
             public void onClick(View v) {
-                alarmDatabase.deleteTime(timesList.get(position));
+                mAlarmDatabase.deleteTime(TIMES_LIST.get(position));
                 //remove from list
-                timesList.remove(position);
-                context.recreate();
+                TIMES_LIST.remove(position);
+                CONTEXT.recreate();
             }
         });
 
