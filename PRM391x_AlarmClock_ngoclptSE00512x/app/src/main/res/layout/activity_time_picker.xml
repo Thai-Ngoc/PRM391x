@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/timePicker"
             android:layout_marginTop="@dimen/button_marginTop"
-            android:layout_marginLeft="245sp"
+            android:layout_marginLeft="@dimen/left"
             android:text="@string/cancel_button" />
 
     </RelativeLayout>

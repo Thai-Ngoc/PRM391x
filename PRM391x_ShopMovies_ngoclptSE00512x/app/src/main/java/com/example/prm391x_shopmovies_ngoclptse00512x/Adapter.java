@@ -30,7 +30,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(ItemViewHolder holder, int position) {
+        Model m = item.get(position);
 
     }
 
@@ -39,6 +40,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
         return item.size();
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
     }
 }
