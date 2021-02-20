@@ -19,12 +19,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
     private List<Model> item;
     private Context context;
 
-    public Adapter(List<Model> item, Context context) {
+    public Adapter(List<Model> item, Context c) {
         this.item = item;
-        this.context = context;
+        this.context = c;
     }
 
-    @NonNull
+    @Override
+    public int getItemCount() {
+        return item.size();
+    }
+
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -41,11 +45,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
                 .into(holder.ivImage);
         holder.tvTitle.setText(m.title);
         holder.tvPrice.setText(m.price);
-    }
-
-    @Override
-    public int getItemCount() {
-        return item.size();
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
