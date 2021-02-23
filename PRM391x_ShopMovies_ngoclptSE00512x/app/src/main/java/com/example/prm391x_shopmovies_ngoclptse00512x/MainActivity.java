@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+
                 //Get data returned from Json
                 String json = response.body().string();
                 final List<Model> movies = jsonAdapter.fromJson(json);
