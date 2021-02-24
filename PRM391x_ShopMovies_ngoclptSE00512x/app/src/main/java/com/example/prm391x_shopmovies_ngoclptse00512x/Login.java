@@ -48,6 +48,7 @@ public class Login extends AppCompatActivity {
                 });
 
     }
+    
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
