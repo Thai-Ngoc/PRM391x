@@ -1,21 +1,60 @@
 package com.example.prm391x_shopmovies_ngoclptse00512x;
 
 import android.content.Context;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
+public class Adapter extends BaseAdapter {  //extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
 
-    private List<Model> item;
+    Context context;
+    List<Model> listMovies;
+    LayoutInflater inflater;
+    public  Adapter(Context context, List<Model> arr){
+        this.context = context;
+        this.listMovies = arr;
+        this.inflater = LayoutInflater.from(context);
+    }
+
+    @Override
+    public int getCount() {
+        return listMovies.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = inflater.inflate(R.layout.item,null);
+        ImageView img = convertView.findViewById(R.id.iv_image);
+        TextView title = convertView.findViewById(R.id.tv_title);
+        TextView price = convertView.findViewById(R.id.tv_price);
+        Model movie = listMovies.get(position);
+        Toast.makeText(context,movie.image_url,Toast.LENGTH_LONG).show();
+        Picasso.with(context).load(movie.image_url).into(img);
+        title.setText(movie.title);
+        price.setText(movie.price);
+        return convertView;
+    }
+    /*private List<Model> item;
     private Context context;
 
     public Adapter(List<Model> item, Context c) {
@@ -57,5 +96,5 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ItemViewHolder> {
             tvPrice = itemView.findViewById(R.id.tv_price);
             ivImage = itemView.findViewById(R.id.iv_image);
         }
-    }
+    }*/
 }

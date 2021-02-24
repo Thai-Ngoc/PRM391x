@@ -13,6 +13,7 @@ import com.squareup.moshi.Types;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -22,7 +23,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import android.os.Bundle;
+import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initialize RecyclerView
-        final RecyclerView rvMovies = findViewById(R.id.rv_movies);
-        rvMovies.setLayoutManager(new LinearLayoutManager(this));
+        final GridView rvMovies = findViewById(R.id.rv_movies);
+        //rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
         //Initialize OkHttpClient to get data
         OkHttpClient client = new OkHttpClient();
@@ -62,12 +65,16 @@ public class MainActivity extends AppCompatActivity {
                 //Get data returned from Json
                 String json = response.body().string();
                 final List<Model> movies = jsonAdapter.fromJson(json);
+               // Toast.makeText(getApplicationContext(),movies.size(),Toast.LENGTH_LONG).show();
+
+                Adapter adapter = new Adapter(getApplicationContext(),movies);
+                //rvMovies.setAdapter(adapter);
 
                 //Display on RecyclerView
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        rvMovies.setAdapter(new Adapter(movies, MainActivity.this));
+                        rvMovies.setAdapter(adapter);
                     }
                 });
             }

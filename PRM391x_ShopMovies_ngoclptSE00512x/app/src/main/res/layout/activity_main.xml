@@ -11,8 +11,9 @@
     android:paddingTop="10sp"
     tools:context="com.example.prm391x_shopmovies_ngoclptse00512x.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <GridView
         android:id="@+id/rv_movies"
+        android:numColumns="auto_fit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>
