@@ -20,6 +20,7 @@ public class Adapter extends BaseAdapter {  //extends RecyclerView.Adapter<Adapt
     Context context;
     List<Model> listMovies;
     LayoutInflater inflater;
+
     public  Adapter(Context context, List<Model> arr){
         this.context = context;
         this.listMovies = arr;
