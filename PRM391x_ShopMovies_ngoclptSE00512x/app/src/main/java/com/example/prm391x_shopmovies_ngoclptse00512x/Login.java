@@ -25,6 +25,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.cmdLoginFacebook);
         Intent intent = new Intent(this,MainActivity.class);
