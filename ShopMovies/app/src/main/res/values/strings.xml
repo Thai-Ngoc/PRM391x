@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">PRM391x_ShopMovies_ngoclptSE00512x</string>
+
     <string name="facebook_app_id">343793116881461</string>
     <string name="fb_login_protocol_scheme">fb343793116881461</string>
+
+    <string name="str_header_profile">Profile</string>
+
+    <string name="str_btn_movies">Movies</string>
+    <string name="str_btn_profile">Profile</string>
+
+    <string name="str_btn_share">Share</string>
+    <string name="str_menu_label_movies">Movies</string>
+    <string name="str_menu_label_profile">Profile</string>
 </resources>
