@@ -13,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-
+import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
+
     TextView txtName, txtEmail, txtUserId;
     ImageView imageView;    // Profile picture
 
@@ -24,7 +24,6 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         // Declare View objects for manipulation
         createViewObjects();
         // Display user info on View

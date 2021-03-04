@@ -11,15 +11,15 @@ public class MovieItem {
         this.mPrice = mPrice;
     }
 
-    public String getmImageLink() {
+    public String getImageLink() {
         return mImageLink;
     }
 
-    public String getmTitle() {
+    public String getTitle() {
         return mTitle;
     }
 
-    public String getmPrice() {
+    public String getPrice() {
         return mPrice;
     }
 }

@@ -16,7 +16,8 @@ import android.widget.GridView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MoviesActivity extends AppCompatActivity {
-    private Json mJson;
+
+    private JsonParser mJsonParser;
     int myLastVisiblePos;
 
     @Override
@@ -26,7 +27,7 @@ public class MoviesActivity extends AppCompatActivity {
 
         // Run ASyncTask to get info from JSON file and display movies list
         try {
-            mJson = (Json) new Json(this, this).execute();
+            mJsonParser = (JsonParser) new JsonParser(this, this).execute();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/card_item_elev"
+    app:cardCornerRadius="@dimen/card_item_corner">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/img_movie_height">
+
+            <ImageView
+                android:id="@+id/img_movie_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"/>
+
+            <com.facebook.share.widget.ShareButton
+                android:id="@+id/btn_share_images"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_btn_share"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                tools:ignore="MissingClass" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/txt_height_movie_title"
+            android:textSize="@dimen/txt_size_movie_details"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txt_movie_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:textSize="@dimen/txt_size_movie_details"
+            android:textColor="@color/red"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
