@@ -13,19 +13,19 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class CustomAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<MovieItem> listMovieItems;    // List of MovieItem objects
-    LayoutInflater inflater;
+    Context mContext;
+    ArrayList<MovieItem> mListMovieItems;    // List of MovieItem objects
+    LayoutInflater mInflater;
 
     public CustomAdapter(Context context, ArrayList<MovieItem> listMovieItems) {
-        this.context = context;
-        this.listMovieItems = listMovieItems;
-        this.inflater = LayoutInflater.from(context);
+        this.mContext = context;
+        this.mListMovieItems = listMovieItems;
+        this.mInflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getCount() {
-        return listMovieItems.size();
+        return mListMovieItems.size();
     }
 
     @Override
@@ -40,7 +40,8 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = inflater.inflate(R.layout.item_grid, null);
+
+        convertView = mInflater.inflate(R.layout.item_grid, null);
 
         // Movie poster
         ImageView imageView = convertView.findViewById(R.id.img_movie_poster);
@@ -50,7 +51,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView txtPrice = convertView.findViewById(R.id.txt_movie_price);
 
         // Set movie info from MovieItem object
-        MovieItem movieItem = listMovieItems.get(position);
+        MovieItem movieItem = mListMovieItems.get(position);
         Picasso.get().load(movieItem.getImageLink()).into(imageView);   // Load image from URL
         txtTitle.setText(movieItem.getTitle());
         txtPrice.setText(movieItem.getPrice());

@@ -17,8 +17,8 @@ import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView txtName, txtEmail, txtUserId;
-    ImageView imageView;    // Profile picture
+    TextView mTxtName, mTxtEmail, mTxtUserId;
+    ImageView mImageView;    // Profile picture
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,18 +76,18 @@ public class ProfileActivity extends AppCompatActivity {
         String userId = sharedPreferences.getString("USER_ID", null);
         String imageUrl = sharedPreferences.getString("IMAGE_URL", null);
 
-        txtName.setText(name);
-        txtEmail.setText(email);
-        txtUserId.setText(userId);
-        Picasso.get().load(imageUrl).into(imageView);
+        mTxtName.setText(name);
+        mTxtEmail.setText(email);
+        mTxtUserId.setText(userId);
+        Picasso.get().load(imageUrl).into(mImageView);
     }
 
     /** Declare View objects for manipulation **/
     public void createViewObjects() {
-        imageView = findViewById(R.id.image_profile);
-        txtName = findViewById(R.id.txt_user_name);
-        txtEmail = findViewById(R.id.txt_user_email);
-        txtUserId = findViewById(R.id.txt_user_id);
+        mImageView = findViewById(R.id.image_profile);
+        mTxtName = findViewById(R.id.txt_user_name);
+        mTxtEmail = findViewById(R.id.txt_user_email);
+        mTxtUserId = findViewById(R.id.txt_user_id);
     }
 
     /** Override BackPressed to switch to MoviesActivity **/

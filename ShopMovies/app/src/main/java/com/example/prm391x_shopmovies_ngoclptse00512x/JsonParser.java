@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -26,19 +27,19 @@ import java.util.ArrayList;
 import javax.net.ssl.HttpsURLConnection;
 
 public class JsonParser extends AsyncTask<String, String, Void> {
-    ArrayList<MovieItem> listMovieItems = new ArrayList<>();    // List of MovieItem objects
-    BufferedInputStream inputStream;
-    JSONArray jsonArray;
-    String result = ""; // Result reading inputStream
-    Activity activity;
-    Context context;
+    ArrayList<MovieItem> mListMovieItems = new ArrayList<>();    // List of MovieItem objects
+    BufferedInputStream mInputStream;
+    JSONArray mJsonArray;
+    String mResult = ""; // Result reading inputStream
+    Activity mActivity;
+    Context mContext;
     private int mPreviousPosition;  // Position of the previously clicked item in the GridView (Movies List)
     private View mPreviousView; // The View (movie) previously clicked
 
 
     public JsonParser(Activity activity, Context context) {
-        this.activity = activity;
-        this.context = context;
+        this.mActivity = activity;
+        this.mContext = context;
     }
 
     @Override
@@ -51,10 +52,10 @@ public class JsonParser extends AsyncTask<String, String, Void> {
         HttpsURLConnection httpsURLConnection = null;
         try {
             // Get URL address of JSON file
-            URL url = new URL(Url.fetchData);
+            URL url = new URL(Url.FETCH_DATA);
             httpsURLConnection = (HttpsURLConnection) url.openConnection();
-            inputStream = new BufferedInputStream(httpsURLConnection.getInputStream());
-            result = readStream();
+            mInputStream = new BufferedInputStream(httpsURLConnection.getInputStream());
+            mResult = readStream();
         } catch(IOException e) {
             e.printStackTrace();
         }
@@ -65,16 +66,17 @@ public class JsonParser extends AsyncTask<String, String, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         try {
-            jsonArray = new JSONArray(result);
-            if(jsonArray != null) {
+            mJsonArray = new JSONArray(mResult);
+            if(mJsonArray != null) {
                 // Create MovieItem objects using info from JSON data
                 // Add objects into list
-                for(int i = 0; i < jsonArray.length(); i++) {
+                for(int i = 0; i < mJsonArray.length(); i++) {
                     MovieItem movieItem = new MovieItem(
-                            jsonArray.getJSONObject(i).getString("title"),
-                            jsonArray.getJSONObject(i).getString("image"),
-                            jsonArray.getJSONObject(i).getString("price"));
-                    listMovieItems.add(movieItem);
+                            mJsonArray.getJSONObject(i).getString("image"),
+                            mJsonArray.getJSONObject(i).getString("title"),
+                            mJsonArray.getJSONObject(i).getString("price"));
+                    mListMovieItems.add(movieItem);
+                    Log.d("movieItem", movieItem.getImageLink() + movieItem.getTitle() + movieItem.getPrice());
                 }
             }
         } catch(Exception e) {
@@ -82,8 +84,8 @@ public class JsonParser extends AsyncTask<String, String, Void> {
         }
 
         // Set adapter to GridView
-        GridView gridView = activity.findViewById(R.id.grid_view_movies);
-        CustomAdapter adapter = new CustomAdapter(context, listMovieItems);
+        GridView gridView = mActivity.findViewById(R.id.grid_view_movies);
+        CustomAdapter adapter = new CustomAdapter(mContext, mListMovieItems);
         gridView.setAdapter(adapter);
 
         // Set Click Event for each GridView item
@@ -92,7 +94,7 @@ public class JsonParser extends AsyncTask<String, String, Void> {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get account info
-                SharedPreferences sharedPreferences = context.getSharedPreferences("USER_FILE.txt", context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = mContext.getSharedPreferences("USER_FILE.txt", mContext.MODE_PRIVATE);
                 String account = sharedPreferences.getString("ACCOUNT", null);
 
                 // Check if account is Facebook -> set up show/ hide on click
@@ -131,7 +133,7 @@ public class JsonParser extends AsyncTask<String, String, Void> {
     }
 
     private String readStream() {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(mInputStream));
         StringBuilder stringBuilder = new StringBuilder();
         String line;
         try {

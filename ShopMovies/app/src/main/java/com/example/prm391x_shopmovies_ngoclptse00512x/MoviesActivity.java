@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MoviesActivity extends AppCompatActivity {
 
     private JsonParser mJsonParser;
-    int myLastVisiblePos;
+    int mMyLastVisiblePos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class MoviesActivity extends AppCompatActivity {
         // Setup scroll event listener of the GridView (movie list)
         // Show/Hide (animated) BottomNavigation Bar if scrolling Down/Up
         GridView gridView = findViewById(R.id.grid_view_movies);
-        myLastVisiblePos = gridView.getFirstVisiblePosition();
+        mMyLastVisiblePos = gridView.getFirstVisiblePosition();
         gridView.setOnScrollListener( new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -59,14 +59,14 @@ public class MoviesActivity extends AppCompatActivity {
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                 int currentFirstVisPos = view.getFirstVisiblePosition();
                 // If scroll down
-                if(currentFirstVisPos > myLastVisiblePos) {
+                if(currentFirstVisPos > mMyLastVisiblePos) {
                     showBottomNav(bottomNavigationView);
                 }
                 // If scroll up
-                if(currentFirstVisPos < myLastVisiblePos) {
+                if(currentFirstVisPos < mMyLastVisiblePos) {
                     hideBottomNav(bottomNavigationView);
                 }
-                myLastVisiblePos = currentFirstVisPos;
+                mMyLastVisiblePos = currentFirstVisPos;
             }
         });
     }

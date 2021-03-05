@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginButton mBtnLoginFB;    // Facebook login button
     private SignInButton mBtnLoginGG;   // Google login button
 
-    CallbackManager callbackManager;
+    CallbackManager mCallbackManager;
 
     final int RC_SIGN_IN = 100; // Google request code
     private GoogleSignInClient mGoogleSignInClient;
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        callbackManager = CallbackManager.Factory.create();
+        mCallbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().logOut();    // Logout facebook
 
         setContentView(R.layout.activity_login);
@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /******************************* FACEBOOK SIGN-IN CONFIG ***************************/
     private void setLoginButton() {
-        mBtnLoginFB.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        mBtnLoginFB.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 result();
@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Facebook sign-in result handle
-        callbackManager.onActivityResult(requestCode, resultCode, data);
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     /** Sign Out for both Facebook and Google account
